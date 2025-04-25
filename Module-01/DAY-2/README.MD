@@ -45,8 +45,8 @@ public class main{
 }
 ```
 
-##OUTPUT:
-  ##INPUT   EXPECTED   GOT
+## OUTPUT:
+  ## INPUT   EXPECTED   GOT
    23       TRUE       TRUE
    34   
 
