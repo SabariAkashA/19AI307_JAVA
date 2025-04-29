@@ -1,73 +1,97 @@
-# Ex.No:2(E)  SMALLEST ELEMENT IN AN ARRAY
-
+# Ex.No:4(E)  PARAMETERIZED CONSTRUCTOR
 ## AIM:
-To Write a Java program to find the largest element in an array and then print the largest value. 
+To write a parameterized constructor in the Laptop class given below that initializes the brand , price class field with the string "Apple" and 42500.75.
+
+Call the getBrand() method in the main method of the Sample class  and store the value of the brand in a variable, and print the value.
+
+Call the getPrice() method in the main method of the Sample class  and store the value of the price in a variable, and print the value.
+
 ## ALGORITHM :
-1.Start
 
-2.Input the size of the array (let's call it size)
+1. Start
 
-3.Create an integer array of length size
+2. Define class Laptop:
 
-4.Loop from i = 0 to size - 1:,Input the i-th element and store it in the array
+    Declare a String variable brand.
+    
+    Declare a double variable price.
+    
+    Create a constructor Laptop():
+    
+    Set brand to "Apple".
+    
+    Set price to 42500.75.
 
-5.Initialize a variable largest with the first element of the array
+3. Define a method getBrand():
 
-6.Loop from i = 1 to size - 1:,If the current element array[i] is greater than largest:,Update largest = array[i]
+    Return the value of brand.
+    
+    Define a method getPrice():
+    
+    Return the value of price.
 
-7.Output the value of largest as the largest element
+4. Define class Sample:
 
-8.End
-	
+    In the main method:
+    
+        Create an object myLaptop of class Laptop.
+        
+        Call getBrand() method using myLaptop and store the result in laptopBrand.
+        
+        Print laptopBrand.
+        
+        Call getPrice() method using myLaptop and store the result in laptopPrice.
+        
+        Print laptopPrice.
+
+5. End
+
 
 ## PROGRAM:
  ```
 /*
-Program to implement a Smallest Element in an Array
-Developed by: SABARI AKASH A
+Program to implement a Parameterized Constructor Using Java
+Developed by: SABARI AKASH
 RegisterNumber: 212222230124
 */
 ```
 
 ## Sourcecode.java:
 
-```java
-import java.util.Scanner;
+```JAVA
+class Laptop {
+    String brand;
+    double price;
+    public Laptop() {
+        this.brand = "Apple";
+        this.price = 42500.75;
+    }
 
-public class LargestElement {
+    public String getBrand() {
+        return brand;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+}
+public class Sample {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        int size = scanner.nextInt();
-        int[] array = new int[size];
-
-        for (int i = 0; i < size; i++) {
-            array[i] = scanner.nextInt();
-        }
-
-        int largest = array[0]; // Assume the first element is the largest initially
-
-        for (int i = 1; i < size; i++) {
-            if (array[i] > largest) {
-                largest = array[i];
-            }
-        }
-
-        System.out.println("The largest element in the array is: " + largest);
-
-        scanner.close();
+        Laptop myLaptop = new Laptop();
+        String laptopBrand = myLaptop.getBrand();
+        System.out.println(laptopBrand);
+        double laptopPrice = myLaptop.getPrice();
+        System.out.println(laptopPrice);
     }
 }
 ```
-
 ## OUTPUT:
 
-![image](https://github.com/user-attachments/assets/87908cbe-caef-4359-951a-178115c6dbdc)
+![image](https://github.com/user-attachments/assets/dd258499-d8e9-427a-97a0-9157d4055a30)
 
 
 ## RESULT:
-Thus the java program successfully reads the array size and elements from the user and correctly finds and prints the smallest number in the array.
+Thus, the  java program was successfully parameterized constructor in the Laptop class given below that initializes the brand , price class field with the string "Apple" and 42500.75.
 
-
-
+ 
 
