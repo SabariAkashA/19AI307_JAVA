@@ -46,11 +46,11 @@ Program to implement a Constructor Chaining using Java
 Developed by: SABARI AKASH A
 RegisterNumber: 212222230124
 */
-```JAVA
+```
 
 ## Sourcecode.java:
 
-```
+```JAVA
 
 class Gadgets {
 
@@ -86,10 +86,6 @@ public class Main {
 }
 
 ```
-
-
-
-
 
 ## OUTPUT:
 
