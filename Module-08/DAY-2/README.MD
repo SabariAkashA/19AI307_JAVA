@@ -1,62 +1,34 @@
-# Ex.No:9(B) BYTE ARRAY I/O
+# Ex.No:8(B) IO-FILE READER/WRITER
 ## AIM:
-To create a java program to write data using ByteArrayOutputStream.
-
+To create a java program to append a string in a file “testout.txt” using Writer.
 
 ## ALGORITHM :
-1.	The user enters a string (data), followed by two integers (start and length) specifying the starting position and number of characters to write.
-2.	The string data is converted to a byte array (array).
-3.	Using ByteArrayOutputStream, it writes length bytes from array, starting at start.
-4.	The written data is retrieved as a string (streamData) and displayed, showing the original input and the specific segment written to the stream.
-5.	Any exceptions are caught and handled, displaying stack trace information if an error occurs.
-
-
-
+1.	It creates a file testout.txt, writes "Welcome to Java File Concept -Reader" to it, and displays this initial content.
+2.	It reopens the file in append mode and adds "Hi Everybody" at the end of the existing content.
+3.	It reads the file's content (Welcome to Java File Concept -Reader1234567890) and displays it.
+4.	The file is deleted using file.delete().
+5.	It tries to read the file again, but this throws an exception since the file no longer exists.
 
 ## PROGRAM:
  ```
 /*
-Program to implement a BYTE ARRAY I/O using Java
-Developed by: SABARI AKASH A
+Program to implement a IO File Reader/Writer using Java
+Developed by: SABARI AKASH 
 RegisterNumber: 212222230124
 */
 ```
 
 ## Sourcecode.java:
-
-```JAVA
-import java.io.*;
-import java.util.Scanner;
-public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String data = sc.nextLine();
-
-    try {
-      ByteArrayOutputStream out = new ByteArrayOutputStream();
-      byte[] array = data.getBytes();
-
-      out.write(array);
-
-      String streamData = out.toString();
-      System.out.println("Output stream: " + streamData);
-
-      out.close();
-    }
-
-    catch(Exception e) {
-      e.getStackTrace();
-    }
-  }
-}
 ```
-
+Writer w1 = new FileWriter("testout.txt",true);  
+w1.append("Hi Everybody");  
+w1.close();  
+System.out.println("Append the character in the File Successfully");  
+```
 ## OUTPUT:
 
+![image](https://github.com/user-attachments/assets/2b8d9885-79ca-4ae7-9af3-fc89ad666c26)
 
 ## RESULT:
-Thus, java program to write data using ByteArrayOutputStream was executed and verified successfully.
-
-
-
+Thus, the java program to append a NUMBER in a file “testout.txt” using Writer.was executed and verified successfully
 
