@@ -1,75 +1,84 @@
-# Ex.No:5(E) HAS-A RELATIONSHIP
+# Ex.No:6(E)  MULTIPLE INHERITANCE
+
 ## AIM:
-To implement a java program for area of triangle with the help of getter and setter method and to print the value of area of triangle.
+To write a Java program using multiple inheritance through interfaces to read student details and marks, calculate the average, and display the mark sheet.
+
 ## ALGORITHM :
 
-1. Start the program and import Scanner for user input.
+1.	Start the program.
+2.	Create interface Student:
+a.	Declare methods to read name and rollno.
+3.	Create interface Studentdet:
+a.	Declare a method to read marks of 6 subjects and calculate the average.
+b.	Create a class Studentdetails that implements both interfaces:
+c.	Define variables for name, roll number, marks array, and average.
+4.	Implement all methods from the interfaces.
+a.	Create a display() method to show student details and average.
+5.	In main() method:
+a.	Create an object of Studentdetails.
+b.	Call the methods to get input and display results.
+6.	End the program.
 
-2. Create a TriangleArea class with:
 
-   Private variables width and height.
-   
-   Methods setWidth(double) and setHeight(double) to assign values.
-   
-   Method getArea() that returns the area by multiplying width and height.
-
-3. In the main method:
-
-   Create a Scanner object and a TriangleArea object.
-   
-   Read two double inputs from the user (for width and height).
-
-4. Set the width and height in the TriangleArea object and calculate the area.
-
-5. Print the area (after converting it to an integer) and close the scanner.
 ## PROGRAM:
  ```
 /*
-Program to implement a HAS-A RelationShip
-Developed by: SABARI AKASH
+Program to implement a Multiple Inheritance
+Developed by: SABARI AKASH A
 RegisterNumber: 212222230124
 */
 ```
 
 ## Sourcecode.java:
-
-
 ```JAVA
-import java.util.Scanner;
-public class TriangleArea {
-
-    private double width;
-    private double height;
-
-    public void setWidth(double width) {
-        this.width = width;
-    }
-
-    public void setHeight(double height) {
-        this.height = height;
-    }
-
-    public double getArea() {
-        return width * height;
-    }
-
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        TriangleArea triangle = new TriangleArea();
-        double w = sc.nextDouble(); 
-        double h = sc.nextDouble(); 
-        triangle.setWidth(w);
-        triangle.setHeight(h);
-        System.out.println((int)triangle.getArea());
+class Student
+{
+    Student()
+    {
+        System.out.println("Student Class");
     }
 }
 
+class Marks extends Student
+{
+    Marks()
+    {
+        System.out.println("Marks Class");
+    }
+}
+
+class Total extends Marks
+{
+    Total()
+    {
+        System.out.println("Total Class");
+    }
+}
+
+class Average extends Total
+{
+    Average()
+    {
+        System.out.println("Average Class");
+    }
+}
+
+
+public class Main
+{
+    public static void main(String args[])
+    {
+        Average obj = new Average();
+        
+        
+    }
+}
 ```
 
 ## OUTPUT:
 
-![image](https://github.com/user-attachments/assets/6761079b-9734-42e3-bbcd-705e07963810)
-
+![image](https://github.com/user-attachments/assets/cd1a7453-cae8-4e8d-a484-bc6a7f1376b6)
 
 ## RESULT:
-Thus the java program to Find the Largest or Max Number in Array using has - a relationship was executed successfully. 
+
+Thus, the java program demonstrates multiple inheritance using interfaces and successfully displays the mark sheet of a student by collecting personal and academic data. 
