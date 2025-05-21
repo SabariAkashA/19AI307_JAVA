@@ -20,7 +20,7 @@ RegisterNumber: 212222230124
 ```
 
 ## Sourcecode.java:
-```
+```JAVA
   class Display {
 
 	static synchronized void wish(String name) {
