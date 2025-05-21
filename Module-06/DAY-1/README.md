@@ -1,87 +1,68 @@
-# Ex.No:5(A)  DATA HIDING AND ENCAPSULATION
+# Ex.No:6(A)  INNER CLASS
 ## AIM:
-To Create a java program to display the age of the person.Use access modifier private to achieve the data hiding concepts.
+To create a Java Program using Method Local Inner Class for below Scenario.
+Create a class "Name" with
+1. String value "Johnson"
+2. Create display() with  a inner class as "Inner"
+3. Inner class have print() to display name
+In main() access all function using its corresponding Object.
 
 ## ALGORITHM :
 1. Start
-
-2.  Import the Scanner class for input.
-
-3. Define class Person:
-
-   Declare a private int variable age.
-   
-   Create a method setAge(int age):
-   
-   Assign the input parameter age to the instance variable age.
-   
-   Create a method getAge():
-   
-   Return the value of age.
-
-4. Define class Main:
-
-   In the main method:
-   
-   Create a Scanner object scanner to read user input.
-   
-   Create an object p of class Person.
-   
-   Read an integer from the user and store it in inputAge.
-   
-   Call p.setAge(inputAge) to set the age in the Person object.
-   
-   Print "My age is " followed by the value returned by p.getAge().
-   
-   Close the scanner.
-
-5. End
-
+2. Define a class Name
+   a. Declare a private instance variable str and initialize it with "Johnson ".
+3. Define a method display() inside the Name class
+   a. Inside display(), define a local inner class named Inner.
+   b. Inside the Inner class:
+4. Define a method print() that prints the value of str using System.out.println().
+   c. Create an object obj of the Inner class.
+   d. Call the print() method using the object obj.
+     .Define the main method
+   a. Create an object obj1 of class Name.
+   b. Call the display() method using obj1.
+5. Program Output:
+  "Name given in Outer Class is Johnson "
+6. End
 
 ## PROGRAM:
  ```
 /*
-Program to implement a Data Hiding & Encapsulation using Java
+Program to implement a Inner Class using Java
 Developed by: SABARI AKASH A
 RegisterNumber: 212222230124
 */
 ```
 
 ## Sourcecode.java:
-
 ```JAVA
-import java.util.Scanner;
-
-class Person {
-    private int age;
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public int getAge() {
-        return age;
-    }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        Person p = new Person();
-
-        int inputAge = scanner.nextInt();
-        p.setAge(inputAge);
-
-        System.out.println("My age is " + p.getAge());
-        scanner.close();
+public class Name
+{
+    private  String str="Johnson ";
+   public void display()
+   {
+         class Inner
+           {
+               public void print()
+               {
+                  System.out.println("Name given in Outer Class is "+str);
+               }
+           }
+           Inner obj=new Inner();
+           obj.print();
+   }
+  
+    public static void main(String[] args)
+    {
+Name obj1=new Name();
+obj1.display();
     }
 }
 ```
 
 ## OUTPUT:
 
-![image](https://github.com/user-attachments/assets/781fdc29-385a-4a25-bdb3-72d4c304f256)
+![image](https://github.com/user-attachments/assets/34abb9d1-c28e-4efd-8f65-a1e456016d83)
 
 
 ## RESULT:
-Thus , the  java program to display the age of the person.Use access modifier private to achieve the data hiding concepts.
+Thus, the Java Program using Method Local Inner Class was executed successfully.
