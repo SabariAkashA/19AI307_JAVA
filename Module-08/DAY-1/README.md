@@ -1,62 +1,39 @@
-# Ex.No:9(B) BYTE ARRAY I/O
+# Ex.No:8(A) IO-FILE STREAM
 ## AIM:
-To create a java program to write data using ByteArrayOutputStream.
-
+To implement a Java Program to write a String in a file "testout.txt" using FileOutputStream
 
 ## ALGORITHM :
-1.	The user enters a string (data), followed by two integers (start and length) specifying the starting position and number of characters to write.
-2.	The string data is converted to a byte array (array).
-3.	Using ByteArrayOutputStream, it writes length bytes from array, starting at start.
-4.	The written data is retrieved as a string (streamData) and displayed, showing the original input and the specific segment written to the stream.
-5.	Any exceptions are caught and handled, displaying stack trace information if an error occurs.
-
-
+1.  Define the string "Welcome to Saveetha" and convert it to a byte array b using getBytes().
+2.	Use Scanner to prompt the user for start (starting index) and length (number of bytes) to write from the string.
+3.	Open testout.txt using FileOutputStream, and write the specified portion of b from the start index for length bytes, then close the output stream.
+4.	Open testout.txt using FileInputStream, read its contents byte-by-byte, convert each byte to a character, and print it to display the file's content.
+5.	Use file.delete() to delete testout.txt.
+6.	Attempt to read the deleted file, which triggers a FileNotFoundException as the file no longer exists.
 
 
 ## PROGRAM:
  ```
 /*
-Program to implement a BYTE ARRAY I/O using Java
+Program to implement a IO File Stream using Java
 Developed by: SABARI AKASH A
 RegisterNumber: 212222230124
 */
 ```
 
 ## Sourcecode.java:
-
-```JAVA
-import java.io.*;
-import java.util.Scanner;
-public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String data = sc.nextLine();
-
-    try {
-      ByteArrayOutputStream out = new ByteArrayOutputStream();
-      byte[] array = data.getBytes();
-
-      out.write(array);
-
-      String streamData = out.toString();
-      System.out.println("Output stream: " + streamData);
-
-      out.close();
-    }
-
-    catch(Exception e) {
-      e.getStackTrace();
-    }
-  }
-}
+```
+   
+                 FileOutputStream fout=new FileOutputStream("testout.txt");    
+             String s="HI EVERYBODY...";    
+             byte b[]=s.getBytes();//converting string into byte array    
+             fout.write(b);    
+             fout.close();    
+                 System.out.println("Successfully Completed");
 ```
 
 ## OUTPUT:
 
+![image](https://github.com/user-attachments/assets/814ae40e-350f-49ae-86f5-f24c5ed68568)
 
 ## RESULT:
-Thus, java program to write data using ByteArrayOutputStream was executed and verified successfully.
-
-
-
-
+Thus the implementation of a Java Program to write a String in a file "testout.txt" using FileOutputStream was executed and verified successfully
